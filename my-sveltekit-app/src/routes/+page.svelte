@@ -8,7 +8,7 @@
     // use the browser flag to conditionally render client-side components
     let isClient = browser;
   
-    let CreativeEditorSDK;
+    let CreativeEditorSDK = null;
     if (isClient) {
       // dynamically import the CreativeEditorSDK component only in the browser
       import("$lib").then(module => {

@@ -3,7 +3,7 @@
     import { onDestroy, onMount } from 'svelte';
   
     // reference to the container HTML element where CE.SDK will be initialized
-    let container;
+    let container = null;
     // where to keep track of the CE.SDK instance
     let cesdk = null;
   
@@ -28,19 +28,21 @@
       try {
         // initialize the CreativeEditorSDK instance in the container element
         // using the given config
-        CreativeEditorSDK.create(container, ceSDKConfig).then(async instance => {
-          cesdk = instance;
+        if (container) {
+          CreativeEditorSDK.create(container, ceSDKConfig).then(async instance => {
+            cesdk = instance;
   
-          // do something with the instance of CreativeEditor SDK (e.g., populate
-          // the asset library with default / demo asset sources)
-          await Promise.all([
-            cesdk.addDefaultAssetSources(),
-            cesdk.addDemoAssetSources({ sceneMode: 'Design' }),
-          ]);
+            // do something with the instance of CreativeEditor SDK (e.g., populate
+            // the asset library with default / demo asset sources)
+            await Promise.all([
+              cesdk.addDefaultAssetSources(),
+              cesdk.addDemoAssetSources({ sceneMode: 'Design' }),
+            ]);
   
-          // create a new design scene in the editor
-          await cesdk.createDesignScene();
-        });
+            // create a new design scene in the editor
+            await cesdk.createDesignScene();
+          });
+        }
       } catch (err) {
         console.warn(`CreativeEditor SDK failed to mount.`, { err });
       }
