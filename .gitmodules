@@ -1,0 +1,6 @@
+[submodule "existing-project/react-excalidraw"]
+	path = existing-project/react-excalidraw
+	url = git@github.com:juliamrch/excalidraw.git
+[submodule "existing-project/angular-reading-journal"]
+	path = existing-project/angular-reading-journal
+	url = git@github.com:juliamrch/reading-visual-journal.git
