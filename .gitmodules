@@ -4,3 +4,6 @@
 [submodule "existing-project/angular-reading-journal"]
 	path = existing-project/angular-reading-journal
 	url = git@github.com:juliamrch/reading-visual-journal.git
+[submodule "photoshot"]
+	path = photoshot
+	url = git@github.com:juliamrch/photoshot.git
