@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import CreativeEditorSDK from "@cesdk/cesdk-js";
   import { onDestroy, onMount } from "svelte";
 
@@ -6,16 +6,17 @@
   let container;
   // where to keep track of the CE.SDK instance
   let cesdk = null;
+  export let config = {};
 
   // deafult CreativeEditor SDK configuration
   const defaultConfig = {
-    license: "<YOUR_LICENSE_KEY>", // replace it with a valid CE.SDK license key
-    callbacks: { onUpload: "local" }, // enable local file uploads in the Asset Library
+    license: "WxbYmxx9lcRPGLUaS7lHBHh6DHFmwEVbmAadXy1fuEqJE5TTT29TzwV8DlcyL7O0", // replace it with a valid CE.SDK license key
+    callbacks: { onUpload: "local" as const}, // enable local file uploads in the Asset Library
     // other default configs...
   };
 
   // accessing the component's props
-  const { el, children, class: _, config, ...props } = $props();
+  //const { el, children, class: _, config, ...props } = $props();
 
   // hook to initialize the CreativeEditorSDK component
   onMount(() => {
