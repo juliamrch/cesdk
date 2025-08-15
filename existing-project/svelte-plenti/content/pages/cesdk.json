@@ -1,0 +1,14 @@
+{
+	"title": "CE.SDK",
+	"description": [
+		"The Creative Editor SDK is a powerful tool for building custom content editing experiences. It provides a flexible API and a range of features to help you create rich, interactive applications."
+	],
+	"image": {
+		"src": "media/perry.webp",
+		"alt": "Perry the planarian mascot"
+	},
+	"source": {
+		"layout": true,
+		"content": true
+	}
+}
